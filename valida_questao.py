@@ -1,70 +1,68 @@
-def valida_questao (D):
-    DF={}
+def valida_questao(dic):
+    res={}
+
+    titulo = True
+    nivel = True
+    opcoes = True
+    correta = True
+
+    if "titulo" not in dic:
+        res["titulo"]= "nao_encontrado"
+        titulo= False
+    if "nivel" not in dic:
+        res["nivel"]= "nao_encontrado"
+        nivel= False
+    if "opcoes" not in dic:
+        res["opcoes"]= "nao_encontrado"
+        opcoes= False
+    if "correta" not in dic:
+        res["correta"]= "nao_encontrado"
+        correta= False
+    if len(dic)!= 4:
+        res["outro"]= "numero_chaves_invalido"
+    if titulo == True:
+        if len(dic["titulo"])== 0 or dic["titulo"].isspace()== True:
+            res["titulo"]= 'vazio'
+    if nivel == True:
+        if dic["nivel"]!= "facil" and dic["nivel"]!= "medio" and dic["nivel"]!= "dificil":
+            res['nivel']= 'valor_errado'    
+    if opcoes== True: 
+        if len(dic["opcoes"])!= 4   :
+            res["opcoes"]='tamanho_invalido'
+    if opcoes== True: 
+        if len(dic["opcoes"])== 4 and "A" not in dic["opcoes"] or "B" not in dic["opcoes"] or "C" not in dic["opcoes"] or "D" not in dic["opcoes"] :
+            if 'opcoes'not in res:
+                res['opcoes']='chave_invalida_ou_nao_encontrada'
     
-    TT = True
-    TN = True
-    TO = True
-    TC = True
-
-    if "titulo" not in D:
-        DF["titulo"]= "nao_encontrado"
-        TT = False
-    if "nivel" not in D:
-        DF["nivel"]= "nao_encontrado"
-        TN = False
-    if "opcoes" not in D:
-        DF["opcoes"]= "nao_encontrado"
-        TO = False
-    if "correta" not in D:
-        DF["correta"]= "nao_encontrado"
-        TC = False
-    if len(D)!= 4 :
-        DF["outro"]= "numero_chaves_invalido"
-    if TT == True:
-        if len(D["titulo"])== 0 or D["titulo"].isspace()== True :
-            DF["titulo"]= 'vazio'
-    if TN == True:
-        if D["nivel"]!= "facil" and D["nivel"]!= "medio" and D["nivel"]!= "dificil":
-            DF['nivel']= 'valor_errado'    
-
-    if TO == True: 
-        if len(D["opcoes"])!= 4   :
-            DF["opcoes"]='tamanho_invalido'
-    if TO == True: 
-        if len(D["opcoes"])== 4 and "A"  not in D["opcoes"] or "B"  not in D["opcoes"] or "C"  not in D["opcoes"] or "D"  not in D["opcoes"] :
-            if 'opcoes'not in DF:
-                DF['opcoes']='chave_invalida_ou_nao_encontrada'
-    
-    if TO == True and "A"  in D["opcoes"] and len(D["opcoes"])== 4 and  D["opcoes"]['A'].isspace() == True :
-        if 'opcoes'not in DF:
-            DF["opcoes"]= {}
-            DF["opcoes"]["A"]='vazia'  
-    if TO == True and "B"  in D["opcoes"] and len(D["opcoes"])== 4 and  D["opcoes"]['B'].isspace() == True :
-        if 'opcoes'not in DF:
-            DF["opcoes"]= {}
-            DF["opcoes"]["B"]='vazia'
+    if opcoes == True and "A"  in dic["opcoes"] and len(dic["opcoes"])== 4 and  dic["opcoes"]['A'].isspace() == True :
+        if 'opcoes'not in res:
+            res["opcoes"]= {}
+            res["opcoes"]["A"]='vazia'  
+    if opcoes == True and "B"  in dic["opcoes"] and len(dic["opcoes"])== 4 and  dic["opcoes"]['B'].isspace() == True :
+        if 'opcoes'not in res:
+            res["opcoes"]= {}
+            res["opcoes"]["B"]='vazia'
         else:
-            DF["opcoes"]["B"]='vazia'
-    if TO == True and "C"  in D["opcoes"] and len(D["opcoes"])== 4 and  D["opcoes"]['C'].isspace() == True :
-        if 'opcoes'not in DF:
-            DF["opcoes"]= {}
-            DF["opcoes"]["C"]='vazia'
+            res["opcoes"]["B"]='vazia'
+    if opcoes== True and "C"  in dic["opcoes"] and len(dic["opcoes"])== 4 and  dic["opcoes"]['C'].isspace() == True :
+        if 'opcoes'not in res:
+            res["opcoes"]= {}
+            res["opcoes"]["C"]='vazia'
         else:
-            DF["opcoes"]["C"]='vazia'
-    if TO == True and "D"  in D["opcoes"] and len(D["opcoes"])== 4 and  D["opcoes"]['D'].isspace() == True :
-        if 'opcoes'not in DF:
-            DF["opcoes"]= {}
-            DF["opcoes"]["D"]='vazia'
+            res["opcoes"]["C"]='vazia'
+    if opcoes== True and "D"  in dic["opcoes"] and len(dic["opcoes"])== 4 and  dic["opcoes"]['D'].isspace() == True :
+        if 'opcoes'not in res:
+            res["opcoes"]= {}
+            res["opcoes"]["D"]='vazia'
         else:
-            DF["opcoes"]["D"]='vazia'
+            res["opcoes"]["D"]='vazia'
 
     
-    if TC == True and D['correta']!= 'A' and D['correta']!= 'B' and D['correta']!= 'C'  and D['correta']!= 'D':
-        DF['correta']= 'valor_errado'
+    if correta == True and dic['correta']!= 'A' and dic['correta']!= 'B' and dic['correta']!= 'C'  and dic['correta']!= 'D':
+        res['correta']= 'valor_errado'
 
 
-    return DF
-            
+    return res
         
                 
         
