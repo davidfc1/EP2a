@@ -1,6 +1,5 @@
 import random
 from termcolor import *
-from random import *
 
 quest = [{'titulo': 'Qual o resultado da operação 57 + 32?',
           'nivel': 'facil',
