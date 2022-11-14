@@ -1,4 +1,6 @@
 import random
+from termcolor import *
+from random import *
 
 quest = [{'titulo': 'Qual o resultado da operação 57 + 32?',
           'nivel': 'facil',
@@ -158,8 +160,118 @@ quest = [{'titulo': 'Qual o resultado da operação 57 + 32?',
          {'titulo': 'O que é Necrose?',
           'nivel': 'dificil',
           'opcoes': {'A': 'Uma banda de Rock', 'B': 'Uma marca de luxo', 'C': 'Cidade Francesa', 'D': 'Morte de tecido orgânico'},
-          'correta': 'D'}
+          'correta': 'D'},
+
+          {'titulo': 'Quantos gols Ronaldo Fenômeno fez oficialmente?',
+          'nivel': 'dificil',
+          'opcoes': {'A': '815', 'B': '414', 'C': '1100', 'D': '1057'},
+          'correta': 'B'},
+
+          {'titulo': 'Quantos metros de altura tem o homem mais alto do mundo?',
+          'nivel': 'dificil',
+          'opcoes': {'A': '1,54', 'B': '2,51', 'C': '2.42', 'D': '2.36'},
+          'correta': 'B'},
+
+          {'titulo': 'Normalmente, quantos litros de sangue uma pessoa tem?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'Tem entre 2 a 4 litros.', 'B': 'Tem entre 4 a 6 litros.', 'C': 'Tem 10 litros. ', 'D': 'Tem 7 litros.'},
+          'correta': 'B'},
+
+          {'titulo': 'De quem é a famosa frase “Penso, logo existo”?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Platão', 'B': 'Galileu Galilei', 'C': 'Descartes', 'D': 'Sócrates'},
+          'correta': 'C'},
+
+          {'titulo': 'De onde é a invenção do chuveiro elétrico?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Alemanha', 'B': 'Itália', 'C': 'Austrália', 'D': 'Brasil'},
+          'correta': 'D'},
+
+          {'titulo': 'Qual o menor país do mundo?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Monaco', 'B': 'Vaticano', 'C': 'Nauru', 'D': 'São Marino'},
+          'correta': 'B'},
+
+          {'titulo': 'Qual o maior país do mundo?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Brasil', 'B': 'China', 'C': 'Russia', 'D': 'Canadá'},
+          'correta': 'C'},
+
+          {'titulo': 'Qual o nome do presidente do Brasil que ficou conhecido como Jango?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Jânio Quadros', 'B': 'Jacinto Anjos', 'C': 'Getúlio Vargas', 'D': 'João Goulart'},
+          'correta': 'D'},
+
+          {'titulo': 'Qual o livro mais vendido no mundo a seguir à Bíblia?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'O Senhor dos Anéis', 'B': 'Dom Quixote', 'C': 'O Pequeno Príncipe', 'D': 'Um Conto de Duas Cidades'},
+          'correta': 'B'},
+
+          {'titulo': 'Quantas casas decimais tem o número pi?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Infinitas', 'B': 'Centenas', 'C': 'Dezenas', 'D': 'Milhares'},
+          'correta': 'A'},
+
+          {'titulo': 'Atualmente, quantos elementos químicos a tabela periódica possui?',
+          'nivel': 'dificil',
+          'opcoes': {'A': '113', 'B': '118', 'C': '109', 'D': '98'},
+          'correta': 'B'},
+
+          {'titulo': 'O que a palavra legend significa em português?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Legenda', 'B': 'Conto', 'C': 'Lenda', 'D': 'Legendário'},
+          'correta': 'C'},
+
+          {'titulo': 'Qual o número mínimo de jogadores em cada time numa partida de futebol?',
+          'nivel': 'medio',
+          'opcoes': {'A': '8', 'B': '10', 'C': '11', 'D': '7'},
+          'correta': 'D'},
+
+          {'titulo': 'Quais os principais autores do Barroco no Brasil?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'Gregório de Matos, Bento Teixeira e Manuel Botelho de Oliveira', 'B': 'Miguel de Cervantes, Gregório de Matos e Danthe Alighieri', 'C': 'Padre Antônio Vieira, Padre Manuel de Melo e Gregório de Matos', 'D': 'Castro Alves, Bento Teixeira e Manuel Botelho de Oliveira'},
+          'correta': 'D'},
+
+          {'titulo': 'Quais as duas datas que são comemoradas em novembro?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Independência do Brasil e Dia da Bandeira', 'B': 'Black Friday e Dia da Árvore', 'C': 'Promoção no Burger King e Dia da salsicha', 'D': 'Proclamação da República e Dia Nacional da Consciência Negra'},
+          'correta': 'D'},
+
+          {'titulo': 'Quanto tempo a luz do Sol demora para chegar à Terra?',
+          'nivel': 'dificil',
+          'opcoes': {'A': '12 minutos', 'B': '1 dia', 'C': '8 minutos', 'D': '7 dias'},
+          'correta': 'C'},
+
+          {'titulo': 'Quem pintou "Guernica"?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Salvador Dalí', 'B': 'Roger Guedes', 'C': 'Pablo Picasso', 'D': 'Rogério Ceni'},
+          'correta': 'D'},
+
+          {'titulo': 'Qual a nacionalidade de Che Guevara?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Brasileiro', 'B': 'Romeno', 'C': 'Cubano', 'D': 'Argentino'},
+          'correta': 'D'},
+
+          {'titulo': 'Qual personagem folclórico costuma ser agradado pelos caçadores com a oferta de fumo?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Caipora', 'B': 'Saci', 'C': 'Boitatá', 'D': 'Ian Faray'},
+          'correta': 'A'},
+
+          {'titulo': 'Quem é o autor de “O Príncipe”?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Maquiavel', 'B': 'Bruno Onishi', 'C': 'Torricelli', 'D': 'Jair Bolsonaro'},
+          'correta': 'A'},
+
+          
+
+
+
+
+
+
+
         ]
+
 
 
 def gera_ajuda(questao):
@@ -366,3 +478,40 @@ lista_premio = [0.00,1000.00,5000.00,10000.00,30000.00,50000.00,100000.00,300000
 pulos = 3
 ajudas = 2
 questoes = transforma_base(quest)
+n_quest = 0
+acertos = 0
+fim = False
+sorteio_questao = []
+niveis = {
+    0: 'facil', 1: 'facil', 2: 'facil',
+    3: 'medio', 4: 'medio', 5: 'medio',
+    6: choice(['medio', 'dificil']), 
+    7: 'dificil', 8: 'dificil', 9: 'dificil'
+}
+
+print("Olá! Você está na Fortuna DeSoft e terá a oportunidade de enriquecer!"'\n')
+
+nome = input("Qual seu nome?")
+
+print('\n'"Ok {0}, você tem direito a pular 3 vezes e 2 ajudas!".format(nome.upper()))
+print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"!''\n')
+
+enter = input("Aperte ENTER para continuar...")
+
+while not fim:
+    atual = sorteia_questao_inedita(questoes, niveis[acertos], sorteio_questao)
+    n_quest += 1
+    fim_quest = False
+    precisou_ajuda = False
+
+    while not fim and not fim_quest:
+        print(questao_para_texto(atual,n_quest))
+        resp = input("Sua resposta: ")
+
+        if resp == atual['correta']:
+            acertos += 1
+            cprint("VOCÊ ACERTOU! O seu prêmio atual é R$ {:05.2f}".format(lista_premio[acertos]), 'green')
+            fim_quest = True
+
+
+
