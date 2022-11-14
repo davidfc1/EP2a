@@ -244,7 +244,7 @@ quest = [{'titulo': 'Qual o resultado da operação 57 + 32?',
           {'titulo': 'Quem pintou "Guernica"?',
           'nivel': 'medio',
           'opcoes': {'A': 'Salvador Dalí', 'B': 'Roger Guedes', 'C': 'Pablo Picasso', 'D': 'Rogério Ceni'},
-          'correta': 'D'},
+          'correta': 'C'},
 
           {'titulo': 'Qual a nacionalidade de Che Guevara?',
           'nivel': 'medio',
