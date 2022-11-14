@@ -535,9 +535,35 @@ while not fim:
                 precisou_ajuda = True
                 print(gera_ajuda(atual))
                 cprint("Você usou uma ajuda e ainda tem {0} ajudas disponíveis".format(ajudas), 'cyan')
+        elif resp == 'parar':
+            cprint("Você parou com R$ {:05.2f}, vai fazer o que com essa grana?".format(lista_premio[acertos]), 'green')
+            fim = True
+        elif resp in ['A', 'B', 'C', 'D']:
+            cprint('ERRRRRRRROU! Vacilou e perdeu tudo!', 'red')
+            fim = True
+        else:
+            cprint('OPÇÃO INVÁLIDA!', 'red')
+            print("As opções de resposta são 'A', 'B', 'C', 'D', 'ajuda', 'pula' ou 'parar'")
+            input('Aperte ENTER para responder novamente...')
+
                 
 
 
+
+    if acertos == 9: 
+        fim = True
+
+    if fim == True:
+        jogar_novamente = input("Gostaria de jogar novamente?")
+        if jogar_novamente.lower() == 'sim':
+            fim = False
+            ajudas = 2
+            pulos = 3
+            n_quest = 0
+            acertos = 0
+            sorteio_questao = []
+        else:
+            print("Obrigado por jogar!")
 
 
 
