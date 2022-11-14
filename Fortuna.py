@@ -474,6 +474,8 @@ def valida_questao(dic):
 
     return res
 
+
+
 lista_premio = [0.00,1000.00,5000.00,10000.00,30000.00,50000.00,100000.00,300000.00,500000.00,1000000.00]
 pulos = 3
 ajudas = 2
@@ -488,6 +490,12 @@ niveis = {
     6: 'medio', 
     7: 'dificil', 8: 'dificil', 9: 'dificil'
 }
+
+for a in valida_questoes(quest):
+    if a != {}:
+        fim = True
+        cprint("Há questões inválidas", 'red')
+        print(valida_questoes(quest))
 
 print("Olá! Você está na Fortuna DeSoft e terá a oportunidade de enriquecer!"'\n')
 
