@@ -485,7 +485,7 @@ sorteio_questao = []
 niveis = {
     0: 'facil', 1: 'facil', 2: 'facil',
     3: 'medio', 4: 'medio', 5: 'medio',
-    6: choice(['medio', 'dificil']), 
+    6: 'medio', 
     7: 'dificil', 8: 'dificil', 9: 'dificil'
 }
 
@@ -554,7 +554,7 @@ while not fim:
         fim = True
 
     if fim == True:
-        jogar_novamente = input("Gostaria de jogar novamente?")
+        jogar_novamente = input("Gostaria de jogar novamente? [Sim/Não]")
         if jogar_novamente.lower() == 'sim':
             fim = False
             ajudas = 2
