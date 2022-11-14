@@ -512,6 +512,32 @@ while not fim:
             acertos += 1
             cprint("VOCÊ ACERTOU! O seu prêmio atual é R$ {:05.2f}".format(lista_premio[acertos]), 'green')
             fim_quest = True
+        elif resp == 'pula':
+            if pulos == 0:
+                cprint('Puts, você não tem mais pulos disponíveis', 'red')
+                input('Aperte ENTER para responder novamente...')
+            else:
+                pulos -= 1
+                if pulos == 0:
+                    print('Você utilizou seu último pulo!')
+                else:
+                    cprint("Você pulou a questão e ainda tem {0} pulos disponíveis".format(pulos), 'cyan')
+                    fim_quest = True
+        elif resp == 'ajuda':
+            if ajudas == 0:
+                cprint("Deu ruim! Você não tem mais ajudas, vai ter que ser na raça!", 'red')
+                input('Aperte ENTER para responder novamente...')
+            elif precisou_ajuda:
+                cprint("Opa! Você ja usou ajuda nessa questão! Ta tentando roubar?!", 'red')
+                input('Aperte ENTER para responder novamente...')
+            else:
+                ajudas -= 1
+                precisou_ajuda = True
+                print(gera_ajuda(atual))
+                cprint("Você usou uma ajuda e ainda tem {0} ajudas disponíveis".format(ajudas), 'cyan')
+                
+
+
 
 
 
